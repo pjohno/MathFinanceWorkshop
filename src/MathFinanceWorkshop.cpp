@@ -2,8 +2,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-#include "nag.h"
-#include "naga00.h"
 using namespace std;
 
 namespace MathFinanceWorkshop
@@ -17,11 +15,5 @@ namespace MathFinanceWorkshop
     return exit_status;
   }
   
-  int testNAG(void)
-  {
-    int exit_status = 0;
-    nag_implementation_details ();
-    return exit_status;
-  }
 }
 
