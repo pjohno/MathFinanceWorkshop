@@ -40,6 +40,23 @@ class MFW_plot:
         # get the time axes for the bottom
         t = np.linspace(0, self.T, num=(self.timeSteps+1))
         
+        # set graph titles
+        ax1.set_title(r'Real Data')
+        ax1.set_xlabel(r'$t$')
+        ax1.set_ylabel(r'$S_t$')
+        # -- 
+        ax2.set_title(r'Simulated Data (20 runs)')
+        ax2.set_xlabel(r'$t$')
+        ax2.set_ylabel(r'$S_t$')
+        # -- 
+        ax3.set_title(r'Log Returns (Real Data)')
+        ax3.set_xlabel(r'$\log(dS)$')
+        ax3.set_ylabel(r'$Frequency$')
+        # -- 
+        ax4.set_title(r'Log Returns (Simulated Data)')
+        ax4.set_xlabel(r'$\log(dS)$')
+        ax4.set_ylabel(r'$Frequency$')
+        
         dS_real = np.zeros(self.timeSteps*self.realDataPaths)
         dS_model = np.zeros(self.timeSteps*self.realDataPaths)
         
@@ -69,7 +86,13 @@ class MFW_plot:
         t = np.linspace(0, self.T*20, num=(20*self.timeSteps+1))
         t = t[0:2000]
         
-        plt.figure(figsize=(16, 12), dpi=80)
+        plt.figure(figsize=(12, 8), dpi=80)
+        
+        # set graph titles
+        plt.title(r'Real Historical Data')
+        plt.xlabel(r'Time $t$')
+        plt.ylabel(r'Stock Price $S_t$')
+        
         plt.plot(t, realDataTemp )
         plt.show()
     

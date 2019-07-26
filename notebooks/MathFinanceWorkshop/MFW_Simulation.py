@@ -188,9 +188,9 @@ class MFW_Simulation:
         plt.figure(figsize=(12, 8), dpi=80)
         plt.hist(wealthReturns,bins='auto')
 
-    def statsCompetitionData(self):
+    def runCompetitionData(self,dataFile):
         
-        competitionDataTemp = np.fromfile("Data/.competitionData.txt")
+        competitionDataTemp = np.fromfile("Data/"+dataFile)
         competitionData = np.zeros((self.competitionDataPaths,self.timeSteps+1))
         for i in range(self.competitionDataPaths):
             if i==0:
@@ -210,6 +210,23 @@ class MFW_Simulation:
         ax2 = plt.subplot(2,2,2 )
         ax3 = plt.subplot(2,2,3 )
         ax4 = plt.subplot(2,2,4 )
+        
+        # set graph titles
+        ax1.set_title(r'Stock Price')
+        ax1.set_xlabel(r'$t$')
+        ax1.set_ylabel(r'$S_t$')
+        # -- 
+        ax2.set_title(r'Number of Stocks')
+        ax2.set_xlabel(r'$t$')
+        ax2.set_ylabel(r'$\Delta_t$')
+        # -- 
+        ax3.set_title(r'Bank Account')
+        ax3.set_xlabel(r'$t$')
+        ax3.set_ylabel(r'$B_t$')
+        # -- 
+        ax4.set_title(r'Wealth Process')
+        ax4.set_xlabel(r'$t$')
+        ax4.set_ylabel(r'$W_t$')
         
         for i in range(self.competitionDataPaths):
             St = competitionData[i]
