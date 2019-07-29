@@ -81,10 +81,7 @@ class MFW_plot:
 
     def plotRealData(self):
         realDataTemp = np.fromfile("Data/testData.txt")
-        realDataTemp = realDataTemp[0:2000]
         # get the time axes for the bottom
-        t = np.linspace(0, self.T*20, num=(20*self.timeSteps+1))
-        t = t[0:2000]
         
         plt.figure(figsize=(12, 8), dpi=80)
         
@@ -92,7 +89,17 @@ class MFW_plot:
         plt.title(r'Real Historical Data')
         plt.xlabel(r'Time $t$')
         plt.ylabel(r'Stock Price $S_t$')
-        
-        plt.plot(t, realDataTemp )
+        t = np.linspace(0, self.T*20, num=(20*self.timeSteps+1))
+         
+        for i in range(self.realDataPaths):
+            rd = np.zeros(self.timeSteps+1)
+            if i==0:
+                rd = realDataTemp[0:101]
+                td = t[0:101]
+            else:
+                rd = realDataTemp[i*100-1:(i+1)*100]
+                td = t[i*100-1:(i+1)*100]
+            
+            plt.plot(td, rd )
         plt.show()
     
