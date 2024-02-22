@@ -1,0 +1,25 @@
+/notebooks/.ipynb_checkpoints
+/*.csv
+/*.html
+/*.pdf
+/*.tex
+/*.zip
+/.projectCreated
+/.kdev4
+/bin
+/build
+/data
+/lecture
+/lib
+/MathFinanceWorkshop.kdev4
+/source.sh
+/notebooks/.ipynb_checkpoints
+/notebooks/__pycache__
+/notebooks/MathFinanceWorkshop/__pycache__
+/notebooks/Linear Regression.ipynb
+/notebooks/setup.py
+/notebooks/simulation.py
+/notebooks/test2.ipynb
+/notebooks/test.ipynb
+/notebooks/Untitled.ipynb
+/notebooks/Competition Test Notebook.ipynb
